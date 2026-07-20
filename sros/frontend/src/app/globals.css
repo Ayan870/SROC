@@ -1,0 +1,88 @@
+:root {
+  --bg-primary: #050409;
+  --bg-secondary: #0b0914;
+  --accent-purple: #8a2be2;
+  --accent-purple-light: #ab66ff;
+  --accent-blue: #00d2ff;
+  --accent-blue-light: #7be4ff;
+  --accent-green: #00e676;
+  --accent-red: #ff1744;
+  --accent-orange: #ff9100;
+  
+  --text-primary: #ffffff;
+  --text-secondary: #a09eb5;
+  --text-muted: #646275;
+  
+  --border-color: rgba(255, 255, 255, 0.07);
+  --border-hover: rgba(138, 43, 226, 0.3);
+  
+  --glass-bg: rgba(15, 12, 28, 0.6);
+  --glass-blur: blur(12px);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  
+  --transition-smooth: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  --font-sans: var(--font-geist-sans), Arial, sans-serif;
+  --font-mono: var(--font-geist-mono), Courier New, monospace;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  background: var(--bg-primary);
+  background-image: 
+    radial-gradient(at 10% 10%, rgba(138, 43, 226, 0.08) 0px, transparent 50%),
+    radial-gradient(at 90% 90%, rgba(0, 210, 255, 0.06) 0px, transparent 50%);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.9;
+    transform: scale(1.05);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Global scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-purple);
+}
